@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700">
+    <link rel="stylesheet" href="PMStyle.css">
+    <title>Planning Manager</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Planning Manager</h1>
+            <p><em>Prospicio ergo sum</em></p>
+        </div>
+        <div></div>
+        <div>
+            <a href="PMDocumentation.html" target="_blank">Documentation</a>
+        </div>
+    </header>
+
+    <div id="content">
+        <aside>
+            <div>
+                <h3>Planning</h3>
+                <div>
+                    <input type="text" id="schedule_name" placeholder="Nom">
+                </div>
+                <div>
+                    Du :
+                    <input type="date" id="schedule_start_date">
+                    au :
+                    <input type="date" id="schedule_end_date">  
+                </div>
+                <div id="days">
+                    <div>
+                        <input type="checkbox" id="schedule_mo">Lundi<br>
+                        <input type="checkbox" id="schedule_tu">Mardi<br>
+                        <input type="checkbox" id="schedule_we">Mercredi<br>
+                        <input type="checkbox" id="schedule_th">Jeudi<br>
+                        <input type="checkbox" id="schedule_fr">Vendredi<br>
+                    </div> 
+                    <div>
+                        <input type="checkbox" id="schedule_sa">Samedi<br>
+                        <input type="checkbox" id="schedule_su">Dimanche
+                    </div>  
+                </div>
+                <div class="schedule_btns" id="info_schedule_create">
+                    <input type="button" id="schedule_create" class="schedule_btn" value="Créer">
+                    <input type="button" id="schedule_back" class="schedule_btn" value="Retour">
+                </div>
+                <div class="schedule_btns" id="info_schedule_edit">
+                    <input type="button" id="schedule_edit" class="schedule_btn" value="Modifier">
+                    <input type="button" id="schedule_new" class="schedule_btn" value="Nouveau">
+                </div>  
+            </div>
+            <div>
+                <h3>Activités</h3>
+                <div>
+                    <input type="text" id="session_name" placeholder="Cours">
+                    <input type="text" id="session_alias" placeholder="Abréviation">
+                    <select id="session_color">
+                        <option value="white">Blanc</option>
+                        <option value="ivory">Ivoire</option>
+                        <option value="red">Rouge</option>
+                        <option value="tomato">Rouge clair</option>
+                        <option value="blue">Bleu</option>
+                        <option value="deepskyblue">Bleu clair</option>
+                        <option value="green">Vert</option>
+                        <option value="palegreen">Vert clair</option>
+                        <option value="yellow">Jaune</option>
+                        <option value="khaki">Jaune clair</option>
+                        <option value="orange">Orange</option>
+                        <option value="salmon">Saumon</option>
+                        <option value="purple">Violet</option>
+                        <option value="orchid">Violet clair</option>
+                        <option value="violet">Rose</option>
+                        <option value="pink">Rose clair</option>
+                        <option value="maroon">Marron</option>
+                        <option value="sienna">Marron clair</option>
+                    </select>
+                    <input type="button" id="session_add" value="Ajouter">
+                </div>
+                <div class="error" id="session_error"></div>
+                <div id="session_list"></div>
+            </div>
+            <div>
+                <h3>Intervenants</h3>
+                <div>
+                    <input type="text" id="speaker_name" placeholder="Intervenant">
+                    <input type="text" id="speaker_alias" placeholder="Abréviation">
+                    <input type="button" id="speaker_add" value="Ajouter">
+                </div>
+                <div class="error" id="speaker_error"></div>
+                <div id="speaker_list"></div>    
+            </div>
+        </aside>
+                
+        <main id="main">
+            <aside>
+                <div id="info_content"></div>
+            </aside>
+            <div>
+                <div id="main_content">
+                    <h2>Générer votre planning en quelques clics !</h2>
+                </div>
+            </div>
+        </main>
+
+        <div id="stats_content_container">
+            <div id="stats_content"></div>
+        </div>
+
+        <div id="save_content_container">
+            <div>
+                Pour conserver votre planning copier le contenu dans le bloc-note et enregistrer votre fichier.<br>
+                Il faudra copier dans le bon champ pour le charger.
+            </div>
+            <div id="save_content">
+                <div>
+                    Votre planning :<br>
+                    <textarea rows="2" cols="40" id="to_copy"></textarea>
+                </div>
+                <div>
+                    Planning précédent :<br>
+                    <textarea rows="2" cols="40" id="to_copy_previous"></textarea>
+                </div>
+                <div>
+                    Charger votre planning :<br>
+                    <textarea rows="2" cols="40" id="to_paste"></textarea>
+                </div>
+                <div>
+                    <input type="button" id="paste" value="Charger">
+                </div>
+            </div>
+        </div>        
+    </div>
+
+    <footer>
+        <div>
+            Version 1.1
+        </div>
+    </footer>
+
+    <script src="PMClasses.js"></script>
+    <script src="PMDomElements.js"></script>
+    <script src="PMToolFunctions.js"></script>
+    <script src="PMFunctions.js"></script>
+    <script src="PMScript.js"></script>
+</body>
+</html>

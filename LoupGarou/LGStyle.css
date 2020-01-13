@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 3px;
+}
+
+body {
+    background: slategray;
+    color: darkred;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+header {
+    padding: 7px;
+}
+
+    header p {
+        margin-left: 50px;
+        font-style: italic;
+    }
+
+nav {
+    border: 1px solid darkred;
+    display: flex;
+}
+
+    nav div {
+        border: 1px solid darkred;
+        flex-basis: 25%;
+        padding: 3px;
+        text-align: center;
+    }
+
+main {
+    padding: 7px;
+    padding-left: 20px;
+    flex-grow: 1;
+}
+
+footer {
+    padding: 7px;
+}
+
+input {
+    background-color: lightgray;
+    border-radius: 2px;
+    padding: 3px;
+    margin-right: 7px;
+}
+
+.btn  {
+    background-color: dimgray;
+    height: 1cm;
+    width: 1cm;
+}
+
+.btn-lg {
+    background-color: dimgray;
+    height: 2cm;
+    width: 2cm;
+}
+
+.btn-long {
+    background-color: dimgray;
+    height: 1cm;
+    width: 4cm;
+}
+
+.choose-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.width-lg {
+    width: 5cm;
+}
+
+#content {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+    #content li {
+        display: flex;
+        margin-bottom: 3px;
+        margin-left: -16px;
+    }
+
+        #content li div {
+            padding: 0 7px;
+            margin: 3px;
+            display: flex;
+            align-items: center;  
+            justify-content: center;  
+        }
+    
+    #content .power-content {
+        font-size: 16px;
+    }

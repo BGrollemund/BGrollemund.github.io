@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700">
+    <link rel="stylesheet" href="PMStyle.css">
+    <title>Documentation - Planning Manager</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Planning Manager</h1>
+            <p><em>Prospicio ergo sum</em></p>
+        </div>
+    </header>
+
+    <div id="doc_content">
+        <h1>Documentation</h1>
+
+        <h2>Planning</h2>
+        <p>
+            Créer :<br>Crée un nouveau planning vierge. Si vous voulez récupérer le planning en cours
+            il restera disponible dans la zone de sauvegarde en bas de la page.
+        </p>
+        <p>
+            Modifier :<br>Il n'est possible de modifier que le nom du planning. <strong>Pensez à bien choisir les jours et la période
+            lors de la création de votre planning.</strong>
+        </p>
+        <p>
+            Remarque :<br>Dans le soucis de respecter l'intégrité de l'Univers la date de fin ne peut être antérieure à la date de départ.
+        </p>
+
+        <h2>Activités et Intervenants</h2>
+        <p>
+            Ajouter :<br>Il est impossible d'ajouter deux activités (ou deux intervenants) avec le même nom.
+        </p>
+        <p>
+            Modifier :<br>Il n'y a pas de restrictions au niveau de la modification. Mettre le même nom aura pour effet de regrouper
+            les heures dans les statistiques. 
+        </p>
+        <p>
+            Supprimer :<br>Supprimer un élément n'affecte ni la planning, ni les statistiques. C'est une option permettant de réduire l'affichage.
+            Il n'est alors plus possible d'ajouter des créneaux de ce type dans le planning. Pour pouvoir reprendre l'ajout il faudra recréer
+            avec le même nom.
+        </p>
+
+        <h2>Créneaux</h2>
+        <p>
+            Ajouter :<br>Pour ajouter un créneau, cliquez sur le jour que vous souhaitez et remplissez les informations sur la gauche.
+        </p>
+        <p>
+            Modifier :<br>Le nombre d'heures et le type d'activités du premier créneau sont obligatoires. Sans ces informations le créneau
+            restera ou redeviendra vierge.<br>De même, pour supprimer le second créneau renseignez une durée ou un type d'activités nul.
+        </p>
+        <p>
+            Mention :<br>Vous pouvez ajouter une information visible sur le planning concernant le créneau.
+            Ceci n'a pas d'impact sur les statistiques.
+        </p>
+        <p>
+            Remarque :<br>Il n'est possible d'ajouter que deux créneaux par jour. De plus, la taille de
+            ces créneaux ne dépend pas du nombre d'heures.
+        </p>
+
+        <h2>Demi-Groupes</h2>
+        <p>
+            Ajouter :<br> Sélectionnez le jour et le créneau où vous voulez ajouter faire deux demi-groupes, cliquez sur "Séparer" et
+            remplissez les informations.
+        </p>
+        <p>
+            Statistiques et cas pathologiques :<br> 
+            1) Si les heures des deux groupes ne sont pas équilibrées, en type d'activités ou en intervenants, les statistiques
+            affichées dans la section Activités (et ses détails) seront celles du groupe 1 (situé à gauche dans le planning).<br>
+            2) Les heures en demi-groupe sont ajoutées à l'intervenant. Cependant, si l'intervenant réalise simultanément les cours des
+            deux demi-groupes, les heures ne seront comptées qu'une fois. Dans ce cas, le détail des statistiques
+            ne sera valable que pour les cours donnés au groupe 1.
+        </p>
+
+        <h2>Statistiques</h2>
+        <p>
+            Options Activités :<br> Vous pouvez créer des groupes et sous-groupes d'activités en utilisant le bouton "Ajouter" afin
+            d'organiser et d'obtenir les sous-totaux.<br>Le bouton "Retirer" permet de retirer les activités cochées du groupe.<br>
+            Le bouton "Supprimer" efface le groupe.
+        </p>
+        <p>
+            Options Intervenants :<br>En cochant les activités souhaitées et en validant par "Retirer" vous enlevez ces activités du
+            calcul du total par intervenant. Les heures des activités retirées restent consultables dans le détail.
+        </p>
+
+        <h2>Impression</h2>
+        <p>
+            A venir.
+        </p>
+
+        <h2>Sauvegarder et Charger</h2>
+        <p>
+            Sauvegarder :<br> Copier le texte de la première zone en bas de page, copier le dans le bloc-note , enregistrer le
+            fichier txt et conserver le précieusement.
+        </p>
+        <p>
+            Charger :<br> Copier le texte du fichier txt, coller le dans la troisème zone en bas de page et cliquer sur "Charger".
+        </p>
+        <p>
+            Restauration :<br> Lorsque vous créez un nouveau planning, l'ancien est effacé. Il vous reste cependant une trace
+            dans la deuxième zone en bas de page. Vous pouvez procéder comme pour charger un ancien planning et le restaurer.
+        </p>
+
+    </div>
+
+    <footer>
+        <div>
+            Version 1.1
+        </div>
+    </footer>
+
+</body>
+</html>
