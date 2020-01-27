@@ -1,33 +1,34 @@
 class Player {
-    constructor(name, role, isTarget, isWolf, isDead, avaliable) {
+    constructor(name, role, isTarget, isWolf, isDead, availiable) {
         this.name = name;
         this.role = role;
         this.isTarget = isTarget;
         this.isWolf = isWolf;
         this.isDead = isDead;
-        this.avaliable = avaliable;
+        this.availiable = availiable;
     }
 }
 
 class Role {
-    constructor(name, icon, power, info, avaliable) {
+    constructor(name, icon, power, info, availiable) {
         this.name = name;
         this.icon = icon;
         this.power = power;
         this.info = info;
-        this.avaliable = avaliable;
+        this.availiable = availiable;
     }
 }
 
 class Game {
-    constructor(players, roles, isUsed, village) {
+    constructor(players, roles, isUsed, village, victory) {
         this.players = players;
         this.roles = roles;
         this.isUsed = isUsed;
         this.village= village;
+        this.victory= victory;
 
-        this.addPlayer = function (name, role, isTarget, isWolf, isDead, avaliable) {
-            this.players.push(new Player(name, role, isTarget, isWolf, isDead, avaliable));
+        this.addPlayer = function (name, role, isTarget, isWolf, isDead, availiable) {
+            this.players.push(new Player(name, role, isTarget, isWolf, isDead, availiable));
         };
 
         this.deletePlayer = function(i) {
@@ -358,7 +359,8 @@ function initGame() {
                 'model' : false,
                 'president' : false,
             },
-            []
+            [],
+            false
     );
 }
 
@@ -367,6 +369,7 @@ initGame();
 $rolesNav.addEventListener( 'click', setRolesContent );
 $playersNav.addEventListener( 'click', setPlayersContent );
 $villageNav.addEventListener( 'click', setVillageContent );
+$storyNav.addEventListener('click', startGame);
 
 function setRolesContent() {
     let result = '<ul>';
@@ -468,7 +471,7 @@ function setEventListenerPlayers() {
             let result = '<ul class="choose-content">';
 
             game.roles.forEach( (role,j) => {
-                if( role.avaliable ) {
+                if( role.availiable ) {
                     result += '<li>';
                     result += '<div class="btn-lg" id="role_add_'+j+'">' + role.icon + '</div>';
                     result += '</li>';
@@ -480,11 +483,11 @@ function setEventListenerPlayers() {
             $content.innerHTML = result;
             
             game.roles.forEach( (role,j) => {
-                if( role.avaliable ) {
+                if( role.availiable ) {
                     document.getElementById( 'role_add_'+j ).addEventListener( 'click', function() {
                         game.roles.forEach( (role,j) => {
                             if( game.players[i].role.name === game.roles[j].name ) {
-                                game.roles[j].avaliable = true;
+                                game.roles[j].availiable = true;
                             }
                         });
           
@@ -492,7 +495,7 @@ function setEventListenerPlayers() {
                         game.players[i].role = game.roles[j];
 
                         if( game.roles[j].name !== 'Villageois' && game.roles[j].name !== 'Loup-Garou' ) {
-                            game.roles[j].avaliable = false;
+                            game.roles[j].availiable = false;
                         }
         
                         if( game.roles[j].name === 'Loup-Garou' || game.roles[j].name === 'Loup-Garou Infecté' || game.roles[j].name === 'Loup-Garou Blanc' ) {
@@ -508,11 +511,11 @@ function setEventListenerPlayers() {
         document.getElementById('delete_'+i).addEventListener( 'click', function() {
             game.roles.forEach( (role,j) => {
                 if( game.players[i].role.name === game.roles[j].name ) {
-                    game.roles[j].avaliable = true;
+                    game.roles[j].availiable = true;
                 }
             });
 
-            if( ! game.players[i].avaliable ) {
+            if( ! game.players[i].availiable ) {
                 for( let j=0; j<game.village.length; j++ ) {
                     if( game.village[j] === game.players[i] ) {
                         game.village.splice(j,1);
@@ -584,7 +587,7 @@ function setEventListenerVillage() {
             let result = '<ul class="choose-content">';
 
             game.players.forEach( (player,j) => {
-                if( player.avaliable ) {
+                if( player.availiable ) {
                     result += '<li>';
                     result += '<div class="btn-long" id="player_'+j+'">' + player.name + "</div>";
                     result += '</li>';
@@ -596,18 +599,18 @@ function setEventListenerVillage() {
             $content.innerHTML = result;
 
             game.players.forEach( (player,j) => {
-                if( player.avaliable ) {
+                if( player.availiable ) {
                     document.getElementById( 'player_'+j ).addEventListener( 'click', function() {
                         if( game.village[i] !== noPlayer ) {
                             game.players.forEach( (player,k) => {
                                 if( player === game.village[i] ) {
-                                    game.players[k].avaliable = true;
+                                    game.players[k].availiable = true;
                                 }
                             });
                         }
 
                         game.village[i] = game.players[j];
-                        game.players[j].avaliable = false;
+                        game.players[j].availiable = false;
 
                         setVillageContent();
                     });
@@ -615,4 +618,56 @@ function setEventListenerVillage() {
             });
         });    
     });
+}
+
+function startGame() {
+        let i = 1;
+        startNight(i);
+        startDay(i);
+        i++;
+}
+
+const
+    GameSentence = {
+        'nightBegin' : ['La nuit tombe sur le village...'],
+        'cupidon' : ['Cupidon se réveille et forme un couple.']
+    };
+
+function startNight(i) {
+    let result = '<div>'+GameSentence.nightBegin[0]+'</div>';
+    result += '<div>Nuit '+i+' :</div>';
+    result += '<div id="game-content"></div>';
+
+    $content.innerHTML = result;
+
+    if( i === 1) {
+        contentCupidon();
+    }
+
+
+}
+
+function startDay(i) {
+
+}
+
+function contentCupidon() {
+    let result = '<div>'+GameSentence.cupidon[0]+'</div>';
+    result += '<ul class="choose-content">';
+    result += '<li>';
+    result += '<div class="btn-long-xl" id="no-player">Pas de Cupidon</div>';
+    result += '</li>';
+    result += '</ul>';
+
+    result += '<ul class="choose-content">';
+    game.players.forEach( (player,j) => {
+            result += '<li>';
+            result += '<div class="btn-long" id="player_'+j+'">' + player.name + "</div>";
+            result += '</li>';
+    });
+    result += '</ul>';
+
+    document.getElementById('game-content').innerHTML = result;
+
+
 }

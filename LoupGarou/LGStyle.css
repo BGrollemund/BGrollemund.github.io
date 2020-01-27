@@ -47,8 +47,7 @@ nav {
     }
 
 main {
-    padding: 7px;
-    padding-left: 20px;
+    padding: 20px 7px 7px 20px;
     flex-grow: 1;
 }
 
@@ -82,6 +81,13 @@ input {
     border: 2px solid slategray;
     height: 1cm;
     width: 4cm;
+}
+
+.btn-long-xl {
+    background-color: dimgray;
+    border: 2px solid slategray;
+    height: 1cm;
+    width: 6cm;
 }
 
 .center {
