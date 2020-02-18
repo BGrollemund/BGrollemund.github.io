@@ -20,22 +20,21 @@
 
 ul {
     list-style: none;
-    padding: 13px;
+    padding: 10px;
 }
 
 a {
     color: var(--black);
-    cursor: pointer;
     text-decoration: none;
 }
 
 hr {
     border: 1px solid var(--gray-dark);
-    margin: 7px;
+    margin: 3px;
 }
 
 i {
-    margin: 13px;
+    margin: 5px;
 }
 
 body {
@@ -47,8 +46,8 @@ body {
 
 h1 {
     color: var(--gray-darker);
-    font-size: 48px;
-    margin: 26px 26px 26px 100px;
+    font-size: 36px;
+    margin: 26px 26px 26px 26px;
 }
 
     h1 span:last-child {
@@ -59,85 +58,36 @@ h2 {
     background-color: var(--blue);
     box-shadow: 0 2px 2px var(--black);
     color: var(--gray-darker);
-    font-size: 28px;
+    text-align: center;
+    font-size: 20px;
     margin: 13px;
     padding: 13px 7px;
-    text-align: center;
 }
-
-    h2 ~ ul li:hover {
-        background-color: var(--gray-light);
-    }
 
 h3 {
     background-color: var(--gray-light);
     box-shadow: 0 4px 2px var(--black);
     color: var(--gray-darker);
-    font-size: 20px;
+    text-align: center;
+    font-size: 18px;
     margin: 26px;
     padding: 13px;
-    text-align: center;
 }
 
-    h3 ~ ul li:hover {
-        background-color: var(--gray-light);
-        cursor: pointer;
-    }
-
     h3 ~ p {
-        font-size: 16px;
+        font-size: 12px;
         margin: 7px;
         text-align: justify;
     }
 
-aside {
-    padding: 26px;
-    overflow: hidden;
-    position: relative;
-    width: 25vw;
-    z-index: 1;
+hr {
+    margin: 7px;
 }
-
-    aside:last-child {
-        margin-top: -100px;
-    }
-
-#aside-left {
-    left: -100%;
-    position: absolute;
-    opacity: 0;
-    transition: transform 1s, opacity 2s;
-    z-index: 1;
-}
-
-    #aside-left.transform {
-        transform: translateX(100%);
-        opacity: 1;
-        position: relative;
-        z-index: 1;
-    }
-
-#aside-right {
-    left: 100%;
-    position: absolute;
-    opacity: 0;
-    transition: transform 1s, opacity 2s;
-    z-index: 1;
-}
-
-    #aside-right.transform {
-        transform: translate(-100%);
-        opacity: 1;
-        position: relative;
-        z-index: 1;
-    }
-
 
 main {
-    margin-top: -40px;
     opacity: 0;
     transition: opacity 2s;
-    width: 40vw;
+    width: 90vw;
 }
 
     main.transform {
@@ -146,20 +96,18 @@ main {
 
     main h3 {
         background-color: var(--blue);
-        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 26px;
-        height: 14vw;
-        left: 3vw;
+        height: 30vw;
+        left: 7vw;
         margin: 0;
         opacity: 0;
         position: absolute;
-        top: 3vw;
+        top: 7vw;
         transform: rotate3d(0, 1, 0, -180deg);
         transition: scale 0.6s, transform 2s, opacity 3s;
-        width: 14vw;
+        width: 30vw;
         z-index: 3;
     }
 
@@ -171,23 +119,23 @@ main {
         main h3:hover {
             transform: scale(1.1);
         }
-        
-            main h3:hover i {
-                opacity: 0.2;
-            }
 
-            main h3 i {
-                font-size: 6vw;
-                left: 25%;
-                position: absolute;
-                top: 25%;
-                opacity: 0.05;
-                transition: font-size 0.6s, opacity 3s;
-            }
+        main h3:hover i {
+            opacity: 0.2;
+        }
+
+        main h3 i {
+            font-size: 14vw;
+            left: 25%;
+            position: absolute;
+            top: 25%;
+            opacity: 0.05;
+            transition: font-size 0.6s, opacity 3s;
+        }
 
 nav {
     display: flex;
-    font-size: 18px;
+    font-size: 12px;
     opacity: 0;
     transition: opacity 4s;
     width: 100%;
@@ -205,31 +153,51 @@ nav {
     }
 
         nav ul li {
-            border-bottom: 2px solid transparent;
-            cursor: pointer;
-            flex-basis: 25%;
-            flex-grow: 1;
-            text-align: center;
-        }
+        border-bottom: 2px solid transparent;
+        flex-basis: 25%;
+        flex-grow: 1;
+        text-align: center;
+    }
 
             nav ul li:hover {
-                border-bottom: 2px solid var(--red);
-            }
-        
+        border-bottom: 2px solid var(--red);
+    }
+
+.container-sm span {
+    font-weight: 700;
+}
+
+.container-sm h2 {
+    text-align: start;
+}
+
+    .container-sm h2 i {
+        margin-right: 26px;
+    }
+
+#container-games-sm > ul {
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 50px;
     width: 100vw;
 }
+
+    .container aside {
+        display: none;
+    }
 
 .game ul li {
     display: flex;
 }
 
     .game ul li div:first-child {
-        margin-right: 13px;
-    }
+    margin-right: 13px;
+}
 
 .hidden {
     display: none;
@@ -248,18 +216,18 @@ nav {
 
 .main-details {
     display: flex;
-    height: 20vw;
-    width: 40vw;
+    height: 45vw;
+    width: 90vw;
 }
 
     .main-details ul {
-        width: 50%;
-    }
+    width: 50%;
+}
 
         .main-details ul li ul {
-            padding: 0 7px;
-            width: 100%;
-        }
+    padding: 0 7px;
+    width: 100%;
+}
 
 .in-progress {
     color: var(--orange);
@@ -282,13 +250,13 @@ nav {
     box-shadow: 0 4px 4px var(--red);
 }
 
-    .red-border.ul-main i {
-        color: var(--red);
-    }
+.red-border.ul-main i {
+    color: var(--red);
+}
 
-    .red-background.ul-main i {
-        color: var(--red);
-    }
+.red-background.ul-main i {
+    color: var(--red);
+}
 
 .red-color {
     color: var(--red);
@@ -308,7 +276,7 @@ nav {
         transform: scale(1);
     }
 
-    .ul-main > li {
+    .ul-main > li   {
         position: relative;
         z-index: 2;
     }
@@ -322,17 +290,63 @@ nav {
         opacity: 0.4;
     }
 
-    .ul-main i {
-        color: var(--gray-light);
-        font-size: 12vw;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0.2;
-        transition: color 0.6s, font-size 0.6s, opacity 0.6s;
+.ul-main i {
+    color: var(--gray-light);
+    font-size: 26vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+    transition: color 0.6s, font-size 0.6s, opacity 0.6s;
+    z-index: 1;
+}
+
+#aside-left-sm, #aside-left-sm-bis, #aside-left-sm-ter {
+    left: -100%;
+    position: absolute;
+    opacity: 0;
+    transition: transform 1s, opacity 2s;
+    z-index: 1;
+}
+
+    #aside-left-sm.transform, #aside-left-sm-bis.transform, #aside-left-sm-ter.transform {
+        transform: translateX(100%);
+        opacity: 1;
+        position: relative;
         z-index: 1;
     }
+
+    #aside-left-sm-bis p {
+        font-size: 14px;
+        padding: 0 7px;
+        text-align: justify;
+    }
+
+#aside-right-sm, #aside-right-sm-bis, #aside-right-sm-ter {
+    left: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: transform 1s, opacity 2s;
+    z-index: 1;
+}
+
+    #aside-right-sm.transform, #aside-right-sm-bis.transform, #aside-right-sm-ter.transform {
+        transform: translate(-100%);
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+    }
+
+    #aside-right-sm-details-bis > ul {
+        display: flex;
+        flex-basis: 40%;
+        justify-content: space-around;
+    }
+
+.main-details hr {
+    display: none;
+}
 
 #ul-main-1 {
     display: flex;
@@ -342,11 +356,9 @@ nav {
     border-right: 1px solid var(--gray-dark);
 }
 
-    #ul-main-1 li {
-        font-size: 16px;
-        margin: 26px 7px 7px 7px;
-        text-align: justify;
-    }
+#ul-main-1 > li {
+    display: none;
+}
 
 #ul-main-2 {
     border-bottom: 1px solid var(--gray-dark);
@@ -355,19 +367,17 @@ nav {
     position: relative;
 }
 
-    #ul-main-2 > li {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-
-        #ul-main-2 > li div {
-            width: 40%;
-        }
+#ul-main-2 > li {
+    display: none;
+}
 
 #ul-main-3 {
     border-right: 1px solid var(--gray-dark);
     border-top: 1px solid var(--gray-dark);
+}
+
+#ul-main-3 > li {
+    display: none;
 }
 
 #ul-main-4 {
@@ -375,25 +385,29 @@ nav {
     border-top: 1px solid var(--gray-dark);
 }
 
+#ul-main-4 > li {
+    display: none;
+}
+
 #view-games {
     cursor: pointer;
 }
 
-    #view-games span:last-child {
-        display: none;
-    }
+#view-games span:last-child {
+    display: none;
+}
 
-    #view-games.hidden {
-        display: block;
-    }
+#view-games.hidden {
+    display: block;
+}
 
-    #view-games.hidden span:last-child {
-        display: inline;
-    }
+#view-games.hidden span:last-child {
+    display: inline;
+}
 
-    #view-games.hidden span:first-child {
-        display: none;
-    }
+#view-games.hidden span:first-child {
+    display: none;
+}
 
 .board-part {
     background: center/100% url("img/Chessboard480-part.png") no-repeat;
@@ -423,4 +437,273 @@ nav {
     transition: transform 0.6s, opacity 0.6s;
     width: 12.5%;
     z-index: 2;
+}
+
+
+@media ( min-width: 576px ) {
+    h1 {
+        font-size: 48px;
+        margin-right: 100px;
+    }
+
+    body {
+        font-size: 11px;
+    }
+
+    nav {
+        font-size: 18px;
+    }
+
+    .container-sm {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .container-sm h2 {
+            text-align: center;
+        }
+
+        .container-sm h2 i {
+            display: none;
+        }
+
+        .container-sm aside {
+            padding: 13px;
+            width: 50vw;
+        }
+
+            .container-sm aside ul.hidden {
+                display: block;
+            }
+
+    .hidden-lg {
+        display: none;
+    }
+
+    #container-games-sm > ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+        #container-games-sm > ul > li {
+            width: 30%;
+        }
+
+        #container-games-sm h3 {
+            width: 25vw;
+        }
+
+    .main-details hr {
+        display: block;
+    }
+
+    #ul-main-1 li {
+        display: block;
+        font-size: 16px;
+        margin: 26px 7px 7px 7px;
+        text-align: justify;
+    }
+
+    #ul-main-2 > li {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    #ul-main-2 > li div {
+        width: 40%;
+    }
+
+    #ul-main-3 > li {
+        display: block;
+    }
+
+    #ul-main-4 > li {
+        display: block;
+    }
+}
+
+@media ( min-width: 768px ) {
+    body {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 ~ p {
+        font-size: 14px;
+    }
+
+    main h3 {
+        font-size: 22px;
+    }
+}
+
+@media ( min-width: 992px ) {
+    a {
+        cursor: pointer;
+    }
+
+    body {
+        font-size: 11px;
+    }
+
+    h2 {
+        font-size: 22px;
+        margin: 13px;
+        padding: 13px 7px;
+    }
+        h2 ~ ul li:hover {
+            background-color: var(--gray-light);
+        }
+
+    h3 {
+        font-size: 18px;
+        margin: 26px;
+        padding: 13px;
+    }
+
+        h3 ~ p {
+            margin: 7px;
+        }
+
+        h3 ~ ul li:hover {
+            background-color: var(--gray-light);
+            cursor: pointer;
+        }
+
+    hr {
+        margin: 4px;
+    }
+
+    #ul-main-1 li {
+        font-size: 13px;
+    }
+
+    #games-to-hide {
+        display: none;
+    }
+
+    .container-sm {
+        display: none;
+    }
+
+    .container-games-sm {
+        display: none;
+    }
+
+    .container {
+        justify-content: space-between;
+    }
+
+        .container aside {
+            display: block;
+        }
+
+    aside {
+        padding: 26px;
+        overflow: hidden;
+        position: relative;
+        width: 30vw;
+        z-index: 1;
+    }
+
+        aside:last-child {
+            margin-top: -100px;
+        }
+
+    #aside-left {
+        left: -100%;
+        position: absolute;
+        opacity: 0;
+        transition: transform 1s, opacity 2s;
+        z-index: 1;
+    }
+
+        #aside-left.transform {
+            transform: translateX(100%);
+            opacity: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+    #aside-right {
+        left: 100%;
+        position: absolute;
+        opacity: 0;
+        transition: transform 1s, opacity 2s;
+        z-index: 1;
+    }
+
+        #aside-right.transform {
+            transform: translate(-100%);
+            opacity: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+    main {
+        width: 40vw;
+    }
+
+        main h3 {
+            cursor: pointer;
+            height: 14vw;
+            left: 3vw;
+            top: 3vw;
+            width: 14vw;
+        }
+
+            main h3 i {
+                font-size: 6vw;
+            }
+
+    .ul-main i {
+        font-size: 12vw;
+    }
+
+    nav ul li {
+        cursor: pointer;
+    }
+
+    .main-details {
+        height: 20vw;
+        width: 40vw;
+    }
+}
+
+@media ( min-width: 1200px ) {
+    hr {
+        margin: 7px;
+    }
+
+    i {
+        margin: 13px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+        h3 ~ p {
+            font-size: 16px;
+        }
+
+    main h3 {
+        font-size: 26px;
+    }
+
+    #ul-main-1 li {
+        font-size: 16px;
+    }
 }

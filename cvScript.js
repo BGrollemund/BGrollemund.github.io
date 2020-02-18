@@ -108,11 +108,38 @@ document.addEventListener( 'DOMContentLoaded', function() {
                 ['a1', 'f1'], ['d2', 'g5'], ['f8', 'f7'], ['e6', 'd6'], ['f1', 'f6'], ['d6', 'c5'], ['f7', 'e7'], ['c5', 'c4'], ['e7', 'b4']
             ]
         ],
+        asideLSmH = document.getElementById('aside-left-sm-h2'),
+        asideLSmShow = document.getElementById('aside-left-sm-show'),
+        asideLSmHide = document.getElementById('aside-left-sm-hide'),
+        asideLSmDetails = document.getElementById('aside-left-sm-details'),
+        asideLSmHBis = document.getElementById('aside-left-sm-h2-bis'),
+        asideLSmShowBis = document.getElementById('aside-left-sm-show-bis'),
+        asideLSmHideBis = document.getElementById('aside-left-sm-hide-bis'),
+        asideLSmDetailsBis = document.getElementById('aside-left-sm-details-bis'),
+        asideLSmHTer = document.getElementById('aside-left-sm-h2-ter'),
+        asideLSmShowTer = document.getElementById('aside-left-sm-show-ter'),
+        asideLSmHideTer = document.getElementById('aside-left-sm-hide-ter'),
+        asideLSmDetailsTer = document.getElementById('aside-left-sm-details-ter'),
+        asideRSmH = document.getElementById('aside-right-sm-h2'),
+        asideRSmShow = document.getElementById('aside-right-sm-show'),
+        asideRSmHide = document.getElementById('aside-right-sm-hide'),
+        asideRSmDetails = document.getElementById('aside-right-sm-details'),
+        asideRSmHBis = document.getElementById('aside-right-sm-h2-bis'),
+        asideRSmShowBis = document.getElementById('aside-right-sm-show-bis'),
+        asideRSmHideBis = document.getElementById('aside-right-sm-hide-bis'),
+        asideRSmDetailsBis = document.getElementById('aside-right-sm-details-bis'),
+        asideRSmHTer = document.getElementById('aside-right-sm-h2-ter'),
+        asideRSmShowTer = document.getElementById('aside-right-sm-show-ter'),
+        asideRSmHideTer = document.getElementById('aside-right-sm-hide-ter'),
+        asideRSmDetailsTer = document.getElementById('aside-right-sm-details-ter'),
         initHidden = document.getElementsByClassName('init-hidden'),
         navMenu = document.getElementsByClassName('nav-menu'),
         ulMain = document.getElementsByClassName('ul-main'),
         viewAnim = document.getElementById( 'view-anim'),
-        viewGames = document.getElementById( 'view-games');
+        viewGames = document.getElementById( 'view-games'),
+        viewGamesSm = document.getElementById( 'container-games-sm'),
+        viewGamesCancel = document.getElementById( 'view-games-cancel');
+
 
     let
         animInProgress = false,
@@ -193,7 +220,13 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
     function intro2() {
         document.getElementById('aside-left').classList.add('transform');
+        document.getElementById('aside-left-sm').classList.add('transform');
+        document.getElementById('aside-left-sm-bis').classList.add('transform');
+        document.getElementById('aside-left-sm-ter').classList.add('transform');
         document.getElementById('aside-right').classList.add('transform');
+        document.getElementById('aside-right-sm').classList.add('transform');
+        document.getElementById('aside-right-sm-bis').classList.add('transform');
+        document.getElementById('aside-right-sm-ter').classList.add('transform');
         document.getElementById('main').classList.add('transform');
     }
 
@@ -329,17 +362,21 @@ document.addEventListener( 'DOMContentLoaded', function() {
     function playGameRandom() {
         let
             gameRand = Math.floor(Math.random() * Math.floor(3)) + 1,
-            game = document.getElementById( 'game-'+gameRand );
+            game = document.getElementById( 'game-'+gameRand ),
+            gameSm = document.getElementById( 'game-'+gameRand+'-sm' );
 
         playGame( gameRand );
 
         game.classList.add( 'red-background', 'red-color' );
+        gameSm.classList.add( 'red-background', 'red-color' );
 
         for(let j=1; j<4; j++) {
             if (gameRand !== j) {
                 const gameR = document.getElementById('game-' + j);
+                const gameRSm = document.getElementById('game-' + j+'-sm');
 
                 gameR.classList.remove('red-background', 'red-color');
+                gameRSm.classList.remove('red-background', 'red-color');
             }
         }
 
@@ -354,9 +391,46 @@ document.addEventListener( 'DOMContentLoaded', function() {
         setTimeout(intro4, 5000);
     }
 
+    function toggleHamburgerL() {
+        asideLSmShow.classList.toggle( 'hidden' );
+        asideLSmHide.classList.toggle( 'hidden' );
+        asideLSmDetails.classList.toggle( 'hidden' );
+    }
+
+    function toggleHamburgerLBis() {
+        asideLSmShowBis.classList.toggle( 'hidden' );
+        asideLSmHideBis.classList.toggle( 'hidden' );
+        asideLSmDetailsBis.classList.toggle( 'hidden' );
+    }
+
+    function toggleHamburgerLTer() {
+        asideLSmShowTer.classList.toggle( 'hidden' );
+        asideLSmHideTer.classList.toggle( 'hidden' );
+        asideLSmDetailsTer.classList.toggle( 'hidden' );
+    }
+
+    function toggleHamburgerR() {
+        asideRSmShow.classList.toggle( 'hidden' );
+        asideRSmHide.classList.toggle( 'hidden' );
+        asideRSmDetails.classList.toggle( 'hidden' );
+    }
+
+    function toggleHamburgerRBis() {
+        asideRSmShowBis.classList.toggle( 'hidden' );
+        asideRSmHideBis.classList.toggle( 'hidden' );
+        asideRSmDetailsBis.classList.toggle( 'hidden' );
+    }
+
+    function toggleHamburgerRTer() {
+        asideRSmShowTer.classList.toggle( 'hidden' );
+        asideRSmHideTer.classList.toggle( 'hidden' );
+        asideRSmDetailsTer.classList.toggle( 'hidden' );
+    }
+
     function viewAnimation() {
         viewAnim.classList.toggle( 'hidden' );
         viewGames.classList.toggle( 'hidden' );
+        viewGamesSm.classList.toggle( 'hidden' );
         for( let el of initHidden ) { el.classList.toggle('hidden'); }
         for( let el of navMenu ) { el.classList.remove('red-color'); }
         for( let el of ulMain ) { el.classList.remove('red-background'); }
@@ -383,14 +457,26 @@ document.addEventListener( 'DOMContentLoaded', function() {
                 const gameR = document.getElementById('game-' + i);
                 gameR.classList.remove('red-background', 'red-color');
             }
+
+            for(let i=1; i<4; i++) {
+                const gameR = document.getElementById('game-' + i + '-sm');
+                gameR.classList.remove('red-background', 'red-color');
+            }
         }
     }
 
     playIntroduction();
 
-    viewAnim.addEventListener( 'click', viewAnimation);
+    asideLSmH.addEventListener( 'click', toggleHamburgerL );
+    asideLSmHBis.addEventListener( 'click', toggleHamburgerLBis );
+    asideLSmHTer.addEventListener( 'click', toggleHamburgerLTer );
+    asideRSmH.addEventListener( 'click', toggleHamburgerR );
+    asideRSmHBis.addEventListener( 'click', toggleHamburgerRBis );
+    asideRSmHTer.addEventListener( 'click', toggleHamburgerRTer );
 
+    viewAnim.addEventListener( 'click', viewAnimation);
     viewGames.addEventListener( 'click', viewAnimation);
+    viewGamesCancel.addEventListener( 'click', viewAnimation);
 
     for(let i=1; i<5; i++) {
         const
@@ -463,5 +549,24 @@ document.addEventListener( 'DOMContentLoaded', function() {
             playGame(i);
         });
     }
+
+    for(let i=1; i<4; i++) {
+        const gameSm = document.getElementById( 'game-'+i+'-sm' );
+
+        gameSm.addEventListener( 'click', function() {
+            this.classList.add( 'red-background', 'red-color' );
+
+            for(let j=1; j<4; j++) {
+                if (i !== j) {
+                    const gameR = document.getElementById('game-' + j +'-sm');
+
+                    gameR.classList.remove('red-background', 'red-color');
+                }
+            }
+
+            playGame(i);
+        });
+    }
+
 
 });
