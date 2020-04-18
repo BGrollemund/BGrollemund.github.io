@@ -2,7 +2,7 @@
 function createHtmlSchedule( name, start_date, end_date, days ) {
     let
         result = '<h2>Les dates ne sont pas bonnes.</h2>',
-        count = 1;
+        count = 1,
         weeks = [];
 
     if( start_date === '' || end_date === '' ) {

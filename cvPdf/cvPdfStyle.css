@@ -65,16 +65,16 @@ h1 {
     border-radius: 5px;
     font-size: 48px;
     padding: 13px;
-    text-align: center;  
+    text-align: center;
     vertical-align: middle;
     width: 500px;
 }
-    
+
 h2 {
     font-size: 32px;
     padding: 26px;
 }
-    
+
 h3 {
     background-color:  var(--normal);
     border-radius: 5px;
@@ -82,14 +82,10 @@ h3 {
     font-size: 26px;
     padding: 7px 13px;
 }
-    
+
 h4 {
     font-size: 22px;
     padding: 7px;
-}
-
-img {
-    margin-top: -10px;
 }
 
 .container {
@@ -119,7 +115,7 @@ img {
         justify-content: space-around;
         padding: 26px 13px;
     }
-    
+
     .full-width > ul > li {
         background-color: var(--light);
         border-radius: 5px;
@@ -127,11 +123,11 @@ img {
         padding: 7px 26px;
     }
 
-    
+
     .full-width > ul > li:nth-child(even) {
         background-color: var(--light);
     }
-    
+
     .full-width ul > li > ul {
         font-weight: normal;
         padding: 7px 13px;
@@ -141,7 +137,7 @@ img {
         padding: 0;
         padding-left: 26px;
     }
-    
+
     .width-20 > li {
         width: 20%;
     }
@@ -169,7 +165,7 @@ img {
 
 .p-0 {
     padding: 0;
-    padding-left: 26px; 
+    padding-left: 26px;
 }
 
 .t-center {
