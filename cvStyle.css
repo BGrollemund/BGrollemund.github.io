@@ -46,7 +46,7 @@ body {
 
 h1 {
     color: var(--gray-darker);
-    font-size: 36px;
+    font-size: 30px;
     margin: 26px 26px 26px 26px;
 }
 
@@ -204,7 +204,7 @@ nav {
 }
 
 .lidem {
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 #main-content {
@@ -225,9 +225,9 @@ nav {
 }
 
         .main-details ul li ul {
-    padding: 0 7px;
-    width: 100%;
-}
+            padding: 0 7px;
+            width: 100%;
+        }
 
 .in-progress {
     color: var(--orange);
@@ -341,7 +341,7 @@ nav {
     #aside-right-sm-details-bis > ul {
         display: flex;
         flex-basis: 40%;
-        justify-content: space-around;
+        /* justify-content: space-around; */
     }
 
 .main-details hr {
@@ -363,7 +363,7 @@ nav {
 #ul-main-2 {
     border-bottom: 1px solid var(--gray-dark);
     border-left: 1px solid var(--gray-dark);
-    font-weight: 700;
+    /* font-weight: 700; */
     position: relative;
 }
 
@@ -506,12 +506,12 @@ nav {
 
     #ul-main-2 > li {
         display: flex;
-        justify-content: space-around;
+        /* justify-content: space-around; */
         width: 100%;
     }
 
     #ul-main-2 > li div {
-        width: 40%;
+        /* width: 40%; */
     }
 
     #ul-main-3 > li {
@@ -707,3 +707,22 @@ nav {
         font-size: 16px;
     }
 }
+
+.job-container {
+    padding-left: 13px;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.job-description {
+    font-size: 16px;
+    padding-bottom: 3px;
+}
+
+#aside-left-sm-details {
+    padding-left: 13px;
+}
+

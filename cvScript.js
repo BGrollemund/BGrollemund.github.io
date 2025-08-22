@@ -150,7 +150,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
         intervalId = null,
         moveId = 0,
         title1 = 'développeur'.split(''),
-        title2 = '.web'.split(''),
+        title2 = '.fullstack'.split(''),
         titleC1 = '',
         titleC2 = '',
         titleL1 = title1.length,
